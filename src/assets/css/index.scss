@@ -11,6 +11,10 @@
 
 html {
   min-height: 100%;
+
+  cursor: url("../images/cursor1.png") 10 10, auto;
+
+  transition: cursor linear 0.3s;
 }
 
 body {
@@ -21,4 +25,21 @@ body {
 
   color: #fff;
   background-color: $darkpink;
+
+  //cursor: url("../images/cursor2.png") 39.5 39.5, auto;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1304px;
+
+  margin: 0 auto;
+}
+
+#app {
+  min-height: 100vh;
+
+  display: -webkit-flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
