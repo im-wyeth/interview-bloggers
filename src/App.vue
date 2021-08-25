@@ -1,7 +1,5 @@
 <template>
-  <component :is="'default-layout'">
-    <router-view />
-  </component>
+  <component :is="'default-layout'"> </component>
 </template>
 
 <script>
