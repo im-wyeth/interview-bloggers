@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
 }
 
@@ -22,6 +23,10 @@ body {
 
   color: #fff;
   background-color: $darkpink;
+}
+
+a {
+  cursor: url("../images/cursor2.png") 39.5 39.5, auto;
 }
 
 .wrapper {

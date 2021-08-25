@@ -4,8 +4,8 @@
       <h1 class="home-main__title">Блогеры</h1>
       <div class="home-main__sort">
         <span class="home-main__sort-by">Сортировка по:</span>
-        <SortBloggers title="выберите площадку" />
-        <SortBloggers title="выберите направление" />
+        <sort-bloggers title="выберите площадку" />
+        <sort-bloggers title="выберите направление" />
       </div>
     </div>
   </main>
