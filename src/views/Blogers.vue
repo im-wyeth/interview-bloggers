@@ -4,19 +4,19 @@
       <h1 class="home-main__title">Блогеры</h1>
       <div class="home-main__sort">
         <span class="home-main__sort-by">Сортировка по:</span>
-        <sort-bloggers title="выберите площадку" />
-        <sort-bloggers title="выберите направление" />
+        <app-sort-bloggers title="выберите площадку" />
+        <app-sort-bloggers title="выберите направление" />
       </div>
     </div>
   </main>
 </template>
 
 <script>
-import SortBloggers from "@/components/SortBloggers.vue";
+import AppSortBloggers from "@/components/AppSortBloggers.vue";
 
 export default {
   components: {
-    SortBloggers,
+    AppSortBloggers,
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <div class="wrapper">
-      <nav-elem
+      <app-nav-elem
         v-for="(link, idx) of breadCrumbs"
         :key="idx"
         :to="link.path"
@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import NavElem from "@/components/NavElem.vue";
+import AppNavElem from "@/components/AppNavElem.vue";
 
 export default {
   components: {
-    NavElem,
+    AppNavElem,
   },
   computed: {
     breadCrumbs() {
