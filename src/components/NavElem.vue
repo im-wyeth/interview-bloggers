@@ -1,11 +1,7 @@
 <template>
   <span class="nav__elem">
-    <router-link
-      :to="to"
-      :class="{ nav__elem_active: $route.path === to }"
-      exact
-    >
-      {{ text }}
+    <router-link :to="to" :class="{ nav__elem_active: elemActive }" exact>
+      {{ elemText }}
     </router-link>
     /
   </span>
@@ -14,8 +10,22 @@
 <script>
 export default {
   props: {
-    text: String,
     to: String,
+    name: String,
+    text: String,
+    lastItem: Boolean,
+  },
+  computed: {
+    elemActive() {
+      if (this.$route.path === this.to || this.lastItem) return true;
+    },
+    elemText() {
+      if (this.name === "Bloger") {
+        return "Максим Максимов";
+      }
+
+      return this.text;
+    },
   },
 };
 </script>

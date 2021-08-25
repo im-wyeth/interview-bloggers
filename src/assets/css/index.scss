@@ -13,8 +13,6 @@ html {
   min-height: 100%;
 
   cursor: url("../images/cursor1.png") 10 10, auto;
-
-  transition: cursor linear 0.3s;
 }
 
 body {
@@ -39,7 +37,7 @@ body {
 #app {
   min-height: 100vh;
 
-  display: -webkit-flex;
+  display: flex;
   justify-content: space-between;
   flex-direction: column;
 }

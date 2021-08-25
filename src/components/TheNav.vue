@@ -1,11 +1,13 @@
 <template>
   <nav class="nav">
     <div class="wrapper">
-      <NavElem
+      <nav-elem
         v-for="(link, idx) of breadCrumbs"
         :key="idx"
-        :text="link.text"
         :to="link.path"
+        :name="link.name"
+        :text="link.text"
+        :lastItem="idx + 1 === breadCrumbs.length"
       />
     </div>
   </nav>
