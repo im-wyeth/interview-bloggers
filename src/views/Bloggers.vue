@@ -3,14 +3,14 @@
     <h1 class="home-main__title">
       <div class="wrapper">Блогеры</div>
     </h1>
-    <div class="home-main__sort">
+    <section class="home-main__sort">
       <div class="wrapper">
         <span class="home-main__sort-by">Сортировка по:</span>
         <app-sort-bloggers title="выберите площадку" />
         <app-sort-bloggers title="выберите направление" />
       </div>
-    </div>
-    <div class="home-main__bloggers">
+    </section>
+    <section class="home-main__bloggers">
       <div class="wrapper">
         <app-blogger-min-card
           v-for="(blogger, idx) of bloggers"
@@ -22,7 +22,7 @@
           :inst-subs="blogger.inst_subs"
         />
       </div>
-    </div>
+    </section>
     <div class="home-main__loading">
       <div class="home-main__loading-line"></div>
       <span class="home-main__loading-text">Подгружаем...</span>

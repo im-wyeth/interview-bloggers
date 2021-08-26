@@ -1,8 +1,8 @@
 <template>
   <main class="bloger-main">
-    <div class="wrapper">
-      <h1>Bloger</h1>
-    </div>
+    <section class="blogger-info">
+      <div class="wrapper"></div>
+    </section>
   </main>
 </template>
 
