@@ -1,8 +1,8 @@
 <template>
   <article class="blogger-min-card">
-    <img src="@/assets/images/bloggers/1.png" alt="bloger1" />
+    <img :src="getImageUrl" alt="bloger" />
     <div class="blogger-min-card__rect">
-      <h2 class="blogger-min-card__name">Максим Максимов</h2>
+      <h2 class="blogger-min-card__name">{{ name }}</h2>
       <div class="blogger-min-card__stats">
         <div class="blogger-min-card__stat">
           <svg
@@ -17,7 +17,7 @@
               fill="#EFF3F5"
             />
           </svg>
-          3 160 000+
+          {{ ytSubs }}
         </div>
         <div class="blogger-min-card__stat">
           <svg
@@ -34,7 +34,7 @@
               fill="#EFF3F5"
             />
           </svg>
-          3 160 000+
+          {{ vkSubs }}
         </div>
         <div class="blogger-min-card__stat">
           <svg
@@ -55,21 +55,47 @@
               fill="#EFF3F5"
             />
           </svg>
-          3 160 000+
+          {{ instSubs }}
         </div>
       </div>
     </div>
   </article>
 </template>
 
+<script>
+export default {
+  props: {
+    name: String,
+    img: String,
+    ytSubs: Number,
+    vkSubs: Number,
+    instSubs: Number,
+  },
+  computed: {
+    getImageUrl() {
+      return require("../assets/images/bloggers/" + this.img);
+    },
+  },
+};
+</script>
+
 <style lang="scss" scoped>
 .blogger-min-card {
-  display: block;
+  display: inline-block;
 
   width: 310px;
   height: 310px;
 
   position: relative;
+
+  margin-top: 50px;
+  margin-right: 20px;
+
+  &:hover &__rect {
+    cursor: url("../assets/images/cursor2.png") 39.5 39.5, auto;
+
+    opacity: 0;
+  }
 
   img {
     position: absolute;
@@ -93,6 +119,11 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
+
+    -webkit-transition: linear 0.3s;
+    -moz-transition: linear 0.3s;
+    -o-transition: linear 0.3s;
+    transition: linear 0.3s;
 
     width: 310px;
     height: 310px;

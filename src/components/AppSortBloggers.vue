@@ -115,7 +115,7 @@ export default {
     border: 1px solid black;
     border-radius: 12px;
 
-    background: #6e105e80;
+    background: #7b326f;
 
     box-shadow: inset 0px 0px 8px white;
 
@@ -128,6 +128,8 @@ export default {
     transform: scale(0);
 
     -webkit-transition: linear 0.3s;
+    -moz-transition: linear 0.3s;
+    -o-transition: linear 0.3s;
     transition: linear 0.3s;
 
     cursor: url("../assets/images/cursor2.png") 39.5 39.5, auto;
@@ -171,6 +173,8 @@ export default {
     border-radius: 5px;
 
     -webkit-transition: linear 0.3s;
+    -moz-transition: linear 0.3s;
+    -o-transition: linear 0.3s;
     transition: linear 0.3s;
 
     &:first-child {

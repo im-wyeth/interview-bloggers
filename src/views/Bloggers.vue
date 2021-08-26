@@ -7,7 +7,17 @@
         <app-sort-bloggers title="выберите площадку" />
         <app-sort-bloggers title="выберите направление" />
       </div>
-      <div class="home-main__bloggers"><app-blogger-min-card /></div>
+      <div class="home-main__bloggers">
+        <app-blogger-min-card
+          v-for="(blogger, idx) of bloggers"
+          :key="idx"
+          :name="blogger.firstName + ' ' + blogger.lastName"
+          :img="blogger.img"
+          :yt-subs="blogger.yt_subs"
+          :vk-subs="blogger.vk_subs"
+          :inst-subs="blogger.inst_subs"
+        />
+      </div>
     </div>
   </main>
 </template>
@@ -20,6 +30,11 @@ export default {
   components: {
     AppSortBloggers,
     AppBloggerMinCard,
+  },
+  computed: {
+    bloggers() {
+      return this.$store.getters.getBloggers;
+    },
   },
 };
 </script>
@@ -49,10 +64,6 @@ export default {
 
       margin-right: 40px;
     }
-  }
-
-  &__bloggers {
-    margin-top: 50px;
   }
 }
 </style>

@@ -55,6 +55,8 @@
 
 <style lang="scss" scoped>
 .footer {
+  margin-top: 120px;
+
   height: 100%;
 
   background: -webkit-linear-gradient(
