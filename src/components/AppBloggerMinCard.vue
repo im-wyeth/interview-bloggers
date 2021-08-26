@@ -17,7 +17,7 @@
               fill="#EFF3F5"
             />
           </svg>
-          {{ ytSubs }}
+          <span v-subs-mask>{{ ytSubs }}</span>
         </div>
         <div class="blogger-min-card__stat">
           <svg
@@ -34,7 +34,7 @@
               fill="#EFF3F5"
             />
           </svg>
-          {{ vkSubs }}
+          <span v-subs-mask>{{ vkSubs }}</span>
         </div>
         <div class="blogger-min-card__stat">
           <svg
@@ -55,7 +55,7 @@
               fill="#EFF3F5"
             />
           </svg>
-          {{ instSubs }}
+          <span v-subs-mask>{{ instSubs }}</span>
         </div>
       </div>
     </div>
@@ -154,6 +154,9 @@ export default {
 
     margin-top: 10px;
     margin-right: 20px;
+
+    font-weight: 500;
+    font-size: 20px;
 
     svg {
       margin-right: 10px;
