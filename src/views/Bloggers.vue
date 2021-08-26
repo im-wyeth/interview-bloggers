@@ -1,13 +1,17 @@
 <template>
   <main class="home-main">
-    <div class="wrapper">
-      <h1 class="home-main__title">Блогеры</h1>
-      <div class="home-main__sort">
+    <h1 class="home-main__title">
+      <div class="wrapper">Блогеры</div>
+    </h1>
+    <div class="home-main__sort">
+      <div class="wrapper">
         <span class="home-main__sort-by">Сортировка по:</span>
         <app-sort-bloggers title="выберите площадку" />
         <app-sort-bloggers title="выберите направление" />
       </div>
-      <div class="home-main__bloggers">
+    </div>
+    <div class="home-main__bloggers">
+      <div class="wrapper">
         <app-blogger-min-card
           v-for="(blogger, idx) of bloggers"
           :key="idx"
@@ -18,6 +22,11 @@
           :inst-subs="blogger.inst_subs"
         />
       </div>
+    </div>
+    <div class="home-main__loading">
+      <div class="home-main__loading-line"></div>
+      <span class="home-main__loading-text">Подгружаем...</span>
+      <div class="home-main__loading-line"></div>
     </div>
   </main>
 </template>
@@ -31,10 +40,31 @@ export default {
     AppSortBloggers,
     AppBloggerMinCard,
   },
+  mounted() {
+    this.setUpNextBloggers();
+  },
   computed: {
     bloggers() {
       return this.$store.getters.getBloggers;
     },
+  },
+  methods: {
+    setUpNextBloggers() {
+      window.addEventListener("scroll", this.nextBloggers);
+    },
+    nextBloggers() {
+      const htmlEnd =
+        document.documentElement.scrollTop >=
+        document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+
+      if (htmlEnd) {
+        this.$store.dispatch("fetchBloggers");
+      }
+    },
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.nextBloggers);
   },
 };
 </script>
@@ -64,6 +94,33 @@ export default {
 
       margin-right: 40px;
     }
+  }
+
+  &__loading {
+    width: 100%;
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+  }
+
+  &__loading-line {
+    width: 100%;
+    height: 1px;
+
+    background-color: #fff;
+  }
+
+  &__loading-text {
+    font-weight: 300;
+    font-size: 15px;
+
+    margin-left: 60px;
+    margin-right: 60px;
   }
 }
 </style>

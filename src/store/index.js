@@ -69,8 +69,31 @@ export default createStore({
       },
     ],
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    pushBloggers(state) {
+      // Simulate fetch bloggers
+
+      for (let i = 0; i < 8; ++i) {
+        state.bloggers.push({
+          firstName: "Максим",
+          lastName: "Максимов",
+          img: i + 1 + ".png",
+          yt_subs: 3160000,
+          vk_subs: 134000,
+          inst_subs: 128000,
+        });
+      }
+    },
+  },
+  actions: {
+    fetchBloggers({ commit }) {
+      // fetch( getBloggers )
+
+      setTimeout(() => {
+        commit("pushBloggers");
+      }, 550);
+    },
+  },
   getters: {
     getBloggers(state) {
       return state.bloggers;

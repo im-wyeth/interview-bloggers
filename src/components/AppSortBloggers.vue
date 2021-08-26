@@ -127,10 +127,10 @@ export default {
     -o-transform: scale(0);
     transform: scale(0);
 
-    -webkit-transition: linear 0.3s;
-    -moz-transition: linear 0.3s;
-    -o-transition: linear 0.3s;
-    transition: linear 0.3s;
+    -webkit-transition: linear 0.2s;
+    -moz-transition: linear 0.2s;
+    -o-transition: linear 0.2s;
+    transition: linear 0.2s;
 
     cursor: url("../assets/images/cursor2.png") 39.5 39.5, auto;
 

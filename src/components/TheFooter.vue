@@ -55,7 +55,7 @@
 
 <style lang="scss" scoped>
 .footer {
-  margin-top: 120px;
+  margin-top: 50px;
 
   height: 100%;
 
