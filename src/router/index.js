@@ -17,7 +17,7 @@ const routes = [
     component: () => import("@/views/Bloggers.vue"),
   },
   {
-    path: "/blogers/:id",
+    path: "/bloggers/:id",
     name: "Blogger",
     meta: {
       breadCrumbs: [
