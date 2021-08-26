@@ -7,16 +7,19 @@
         <app-sort-bloggers title="выберите площадку" />
         <app-sort-bloggers title="выберите направление" />
       </div>
+      <div class="home-main__bloggers"><app-blogger-min-card /></div>
     </div>
   </main>
 </template>
 
 <script>
 import AppSortBloggers from "@/components/AppSortBloggers.vue";
+import AppBloggerMinCard from "@/components/AppBloggerMinCard.vue";
 
 export default {
   components: {
     AppSortBloggers,
+    AppBloggerMinCard,
   },
 };
 </script>
@@ -34,18 +37,22 @@ export default {
     font-weight: 800;
     text-align: center;
   }
-}
 
-.home-main__sort {
-  margin-top: 50px;
+  &__sort {
+    margin-top: 50px;
 
-  &-by {
-    font-weight: 600;
-    font-size: 20px;
+    &-by {
+      font-weight: 600;
+      font-size: 20px;
 
-    display: inline-block;
+      display: inline-block;
 
-    margin-right: 40px;
+      margin-right: 40px;
+    }
+  }
+
+  &__bloggers {
+    margin-top: 50px;
   }
 }
 </style>

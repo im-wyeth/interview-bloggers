@@ -3,30 +3,30 @@ import { createWebHistory, createRouter } from "vue-router";
 const routes = [
   {
     path: "/:catchAll(.*)",
-    redirect: "/blogers",
+    redirect: "/bloggers",
   },
   {
-    path: "/blogers",
-    name: "Blogers",
+    path: "/bloggers",
+    name: "Bloggers",
     meta: {
       breadCrumbs: [
         { path: "/", name: "Home", text: "Главная" },
-        { path: "/blogers", name: "Blogers", text: "Блогеры" },
+        { path: "/bloggers", name: "Bloggers", text: "Блогеры" },
       ],
     },
-    component: () => import("@/views/Blogers.vue"),
+    component: () => import("@/views/Bloggers.vue"),
   },
   {
     path: "/blogers/:id",
-    name: "Bloger",
+    name: "Blogger",
     meta: {
       breadCrumbs: [
         { path: "/", name: "Home", text: "Главная" },
-        { path: "/blogers", name: "Blogers", text: "Блогеры" },
-        { path: "/bloger", name: "Bloger", text: "1" },
+        { path: "/bloggers", name: "Bloggers", text: "Блогеры" },
+        { path: "/blogger", name: "Blogger", text: "1" },
       ],
     },
-    component: () => import("@/views/Bloger.vue"),
+    component: () => import("@/views/Blogger.vue"),
   },
 ];
 

@@ -20,7 +20,7 @@ export default {
       if (this.$route.path === this.to || this.lastItem) return true;
     },
     elemText() {
-      if (this.name === "Bloger") {
+      if (this.name === "Blogger") {
         return "Максим Максимов";
       }
 

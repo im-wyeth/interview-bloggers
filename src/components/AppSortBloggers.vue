@@ -1,7 +1,7 @@
 <template>
   <div class="sort-bloggers">
     <div class="sort-bloggers__btn" @click="openclose">
-      {{ selected ? selected : title }}
+      {{ selected.name ? selected.name : title }}
       <svg
         width="16"
         height="9"
@@ -20,13 +20,15 @@
       :class="{ 'sort-bloggers__drop_active': active }"
     >
       <div class="sort-bloggers__example">Например: Путешествия</div>
-      <div
-        v-for="(selection, idx) of selections"
-        :key="idx"
-        @click="this.selected = selection"
-        class="sort-bloggers__selection"
-      >
-        {{ selection }}
+      <div class="sort-bloggers__list">
+        <div
+          v-for="(selection, idx) of selections"
+          :key="idx"
+          @click="this.selected = selection"
+          class="sort-bloggers__selection"
+        >
+          {{ selection.name }}
+        </div>
       </div>
       <svg
         class="sort-bloggers__arrow-bottom"
@@ -51,20 +53,23 @@ export default {
     title: String,
   },
   data: () => ({
-    selected: "",
+    selected: {
+      name: "",
+      value: "",
+    },
     active: false,
     selections: [
-      "Все",
-      "DIY",
-      "Авто",
-      "Авторское шоу",
-      "Анбоксинг",
-      "Еда",
-      "Животные",
-      "Игры",
-      "Иностранные языки",
-      "Кино",
-      "Красота",
+      { name: "Все", value: "" },
+      { name: "DIY", value: "diy" },
+      { name: "Авто", value: "auto" },
+      { name: "Авторское шоу", value: "authors_show" },
+      { name: "Анбоксинг", value: "unboxing" },
+      { name: "Еда", value: "food" },
+      { name: "Животные", value: "animals" },
+      { name: "Игры", value: "animals" },
+      { name: "Иностранные языки", value: "animals" },
+      { name: "Кино", value: "movie" },
+      { name: "Красота", value: "beauty" },
     ],
   }),
   methods: {
@@ -79,7 +84,7 @@ export default {
 .sort-bloggers {
   display: inline-block;
 
-  min-width: 175px;
+  min-width: 225px;
 
   position: relative;
 
@@ -102,12 +107,10 @@ export default {
 
   &__drop {
     position: absolute;
+    z-index: 9999;
 
     padding: 10px;
     margin-top: 10px;
-
-    min-width: 100%;
-    max-width: 225px;
 
     border: 1px solid black;
     border-radius: 12px;
@@ -138,6 +141,12 @@ export default {
     }
   }
 
+  &__list {
+    max-height: 200px;
+
+    overflow-y: auto;
+  }
+
   &__example {
     color: #eff3f5;
 
@@ -145,6 +154,8 @@ export default {
 
     font-weight: normal;
     font-size: 16px;
+
+    line-height: 18px;
 
     opacity: 0.4;
   }
