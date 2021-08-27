@@ -1,16 +1,16 @@
 <template>
-  <main class="home-main">
-    <h1 class="home-main__title">
+  <main class="bloggers">
+    <h1 class="bloggers__title">
       <div class="wrapper">Блогеры</div>
     </h1>
-    <section class="home-main__sort">
+    <section class="bloggers__sort">
       <div class="wrapper">
-        <span class="home-main__sort-by">Сортировка по:</span>
+        <span class="bloggers__sort-by">Сортировка по:</span>
         <app-sort-bloggers title="выберите площадку" />
         <app-sort-bloggers title="выберите направление" />
       </div>
     </section>
-    <section class="home-main__bloggers">
+    <section class="bloggers__list">
       <div class="wrapper">
         <app-blogger-min-card
           v-for="blogger of bloggers"
@@ -24,10 +24,10 @@
         />
       </div>
     </section>
-    <div class="home-main__loading">
-      <div class="home-main__loading-line"></div>
-      <span class="home-main__loading-text">Подгружаем...</span>
-      <div class="home-main__loading-line"></div>
+    <div class="bloggers__loading">
+      <div class="bloggers__loading-line"></div>
+      <span class="bloggers__loading-text">Подгружаем...</span>
+      <div class="bloggers__loading-line"></div>
     </div>
   </main>
 </template>
@@ -71,7 +71,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home-main {
+.bloggers {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   flex: 1;

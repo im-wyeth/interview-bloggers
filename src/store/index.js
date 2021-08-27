@@ -11,6 +11,7 @@ export default createStore({
         yt_subs: 3160000,
         vk_subs: 134000,
         inst_subs: 128000,
+        videos: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
       },
       {
         id: 2,
@@ -20,6 +21,7 @@ export default createStore({
         yt_subs: 3160000,
         vk_subs: 134000,
         inst_subs: 128000,
+        videos: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
       },
       {
         id: 3,
@@ -29,6 +31,7 @@ export default createStore({
         yt_subs: 3160000,
         vk_subs: 134000,
         inst_subs: 128000,
+        videos: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
       },
       {
         id: 4,
@@ -38,6 +41,7 @@ export default createStore({
         yt_subs: 3160000,
         vk_subs: 134000,
         inst_subs: 128000,
+        videos: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
       },
       {
         id: 5,
@@ -47,6 +51,7 @@ export default createStore({
         yt_subs: 3160000,
         vk_subs: 134000,
         inst_subs: 128000,
+        videos: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
       },
       {
         id: 6,
@@ -56,6 +61,7 @@ export default createStore({
         yt_subs: 3160000,
         vk_subs: 134000,
         inst_subs: 128000,
+        videos: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
       },
       {
         id: 7,
@@ -65,6 +71,7 @@ export default createStore({
         yt_subs: 3160000,
         vk_subs: 134000,
         inst_subs: 128000,
+        videos: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
       },
       {
         id: 8,
@@ -74,6 +81,7 @@ export default createStore({
         yt_subs: 3160000,
         vk_subs: 134000,
         inst_subs: 128000,
+        videos: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
       },
     ],
   },
@@ -92,6 +100,7 @@ export default createStore({
           yt_subs: 3160000,
           vk_subs: 134000,
           inst_subs: 128000,
+          videos: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"],
         });
       }
     },

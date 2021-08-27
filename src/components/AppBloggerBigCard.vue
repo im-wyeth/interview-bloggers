@@ -110,6 +110,8 @@ export default {
   }
 
   &__stats {
+    max-width: 570px;
+
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
