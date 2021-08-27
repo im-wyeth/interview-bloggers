@@ -118,8 +118,5 @@ export default createStore({
     getBloggers(state) {
       return state.bloggers;
     },
-    getBloggerWithId: (state) => (id) => {
-      return state.bloggers.find((blogger) => blogger.id === Number(id));
-    },
   },
 });

@@ -21,7 +21,12 @@
         </div>
       </div>
     </section>
-    <section class="blogger-main__other"></section>
+    <section class="blogger__other">
+      <div class="wrapper">
+        <h1 class="blogger__other-title">Другие блогеры</h1>
+        <div class="blogger__other-list"></div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -36,7 +41,12 @@ export default {
   },
   computed: {
     blogger() {
-      return this.$store.getters.getBloggerWithId(this.$route.params.id);
+      return this.$store.getters.getBloggers.find(
+        (blogger) => blogger.id === Number(this.$route.params.id)
+      );
+    },
+    otherBloggers() {
+      return this.$store.getters.getOtherBloggers(this.$route.params.id);
     },
   },
 };
@@ -68,6 +78,17 @@ export default {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  &__other {
+    margin-top: 80px;
+  }
+
+  &__other-title {
+    text-align: center;
+
+    font-weight: 800;
+    font-size: 50px;
   }
 }
 </style>
