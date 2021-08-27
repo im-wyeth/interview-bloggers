@@ -1,28 +1,34 @@
 <template>
   <div class="blogger-big-card">
-    <img src="../assets/images/bloggers/1.png" alt="blogger" />
+    <img :src="getImageUrl" alt="blogger" />
     <div class="blogger-big-card__info">
-      <h1 class="blogger-big-card__name">Максим Максимов</h1>
+      <h1 class="blogger-big-card__name">{{ name }}</h1>
       <hr />
       <div class="blogger-big-card__stats">
         <div class="blogger-big-card__stat">
           <img src="../assets/images/yt.png" alt="youtube" />
           <div class="blogger-big-card__stat-wrapper">
-            <div class="blogger-big-card__stat-subs" v-subs-mask>3600000</div>
+            <div class="blogger-big-card__stat-subs" v-subs-mask>
+              {{ ytSubs }}
+            </div>
             <div class="blogger-big-card__stat-text">Подписчиков</div>
           </div>
         </div>
         <div class="blogger-big-card__stat">
-          <img src="../assets/images/vk.png" alt="youtube" />
+          <img src="../assets/images/vk.png" alt="vk" />
           <div class="blogger-big-card__stat-wrapper">
-            <div class="blogger-big-card__stat-subs" v-subs-mask>3600000</div>
+            <div class="blogger-big-card__stat-subs" v-subs-mask>
+              {{ vkSubs }}
+            </div>
             <div class="blogger-big-card__stat-text">Подписчиков</div>
           </div>
         </div>
         <div class="blogger-big-card__stat">
-          <img src="../assets/images/ins.png" alt="youtube" />
+          <img src="../assets/images/inst.png" alt="instagram" />
           <div class="blogger-big-card__stat-wrapper">
-            <div class="blogger-big-card__stat-subs" v-subs-mask>3600000</div>
+            <div class="blogger-big-card__stat-subs" v-subs-mask>
+              {{ instSubs }}
+            </div>
             <div class="blogger-big-card__stat-text">Подписчиков</div>
           </div>
         </div>
@@ -49,18 +55,35 @@
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    name: String,
+    img: String,
+    ytSubs: Number,
+    vkSubs: Number,
+    instSubs: Number,
+  },
+  computed: {
+    getImageUrl() {
+      return require("../assets/images/bloggers/" + this.img);
+    },
+  },
+};
+</script>
+
 <style lang="scss" scoped>
 .blogger-big-card {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 
-  height: 570px;
-
   border: 1px solid #fff;
   border-radius: 5px;
 
   img {
+    flex: 3;
+
     border-radius: 5px 0px 0px 5px;
   }
 
@@ -72,6 +95,8 @@
   }
 
   &__info {
+    flex: 7;
+
     width: 100%;
 
     background-color: #7b326f;

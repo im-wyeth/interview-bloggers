@@ -2,7 +2,13 @@
   <main class="blogger-main">
     <section class="blogger-info">
       <div class="wrapper">
-        <app-blogger-big-card />
+        <app-blogger-big-card
+          :name="blogger.firstName + ' ' + blogger.lastName"
+          :img="blogger.img"
+          :yt-subs="blogger.yt_subs"
+          :vk-subs="blogger.vk_subs"
+          :inst-subs="blogger.inst_subs"
+        />
         <div class="blogger-info__last-videos"></div>
       </div>
     </section>
