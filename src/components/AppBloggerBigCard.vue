@@ -74,9 +74,10 @@ export default {
 
 <style lang="scss" scoped>
 .blogger-big-card {
+  display: flex;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
 
   border: 1px solid #fff;
   border-radius: 5px;
@@ -112,16 +113,20 @@ export default {
   &__stats {
     max-width: 570px;
 
+    display: flex;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
     flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
   }
 
   &__stat {
+    display: flex;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
 
     margin-top: 30px;
     margin-right: 50px;

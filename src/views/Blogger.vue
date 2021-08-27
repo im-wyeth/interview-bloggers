@@ -54,7 +54,7 @@ export default {
       );
     },
     otherBloggers() {
-      return this.$store.getters.getBloggers;
+      return this.$store.getters.getBloggers.slice(0, 4);
     },
   },
 };
@@ -82,10 +82,13 @@ export default {
   &__videos-list {
     margin-top: 50px;
 
+    display: flex;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
     flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
   }
 
   &__other {

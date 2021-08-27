@@ -95,11 +95,18 @@ export default {
   &__loading {
     width: 100%;
 
+    display: flex;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
     justify-content: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
 
     margin-top: 50px;
   }

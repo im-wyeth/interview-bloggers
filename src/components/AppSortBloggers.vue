@@ -94,11 +94,18 @@ export default {
   margin-right: 35px;
 
   &__btn {
+    display: flex;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
     justify-content: space-between;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
 
     svg {
       margin-left: 10px;

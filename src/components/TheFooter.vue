@@ -72,11 +72,18 @@
   background: linear-gradient(180deg, #6e105e 0%, rgba(51, 0, 42, 0.5) 100%);
 
   &__top {
+    display: flex;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
     justify-content: space-between;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
   }
 
   &__bottom {
