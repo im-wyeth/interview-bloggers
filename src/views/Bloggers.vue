@@ -13,8 +13,9 @@
     <section class="home-main__bloggers">
       <div class="wrapper">
         <app-blogger-min-card
-          v-for="(blogger, idx) of bloggers"
-          :key="idx"
+          v-for="blogger of bloggers"
+          :key="blogger.id"
+          :id="blogger.id"
           :name="blogger.firstName + ' ' + blogger.lastName"
           :img="blogger.img"
           :yt-subs="blogger.yt_subs"

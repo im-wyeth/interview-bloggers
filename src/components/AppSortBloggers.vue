@@ -115,7 +115,7 @@ export default {
     border: 1px solid black;
     border-radius: 12px;
 
-    background: #7b326f;
+    background-color: #7b326f;
 
     box-shadow: inset 0px 0px 8px white;
 
