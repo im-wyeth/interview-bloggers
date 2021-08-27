@@ -40,6 +40,10 @@ export default {
   margin-top: 30px;
   margin-right: 20px;
 
+  &:hover {
+    cursor: url("../assets/images/cursor2.png") 39.5 39.5, auto;
+  }
+
   img {
     width: 100%;
     height: 100%;

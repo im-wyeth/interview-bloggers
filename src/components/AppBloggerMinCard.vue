@@ -3,7 +3,9 @@
     <router-link :to="'/bloggers/' + id">
       <img :src="getImageUrl" alt="bloger" />
       <div class="blogger-min-card__rect">
-        <h2 class="blogger-min-card__name">{{ name }}</h2>
+        <h2 class="blogger-min-card__name">
+          {{ blogger.firstName + " " + blogger.lastName }}
+        </h2>
         <div class="blogger-min-card__stats">
           <div class="blogger-min-card__stat">
             <svg
@@ -18,7 +20,7 @@
                 fill="#EFF3F5"
               />
             </svg>
-            <span v-subs-mask>{{ ytSubs }}</span>
+            <span v-subs-mask>{{ blogger.yt_subs }}</span>
           </div>
           <div class="blogger-min-card__stat">
             <svg
@@ -35,7 +37,7 @@
                 fill="#EFF3F5"
               />
             </svg>
-            <span v-subs-mask>{{ vkSubs }}</span>
+            <span v-subs-mask>{{ blogger.vk_subs }}</span>
           </div>
           <div class="blogger-min-card__stat">
             <svg
@@ -56,7 +58,7 @@
                 fill="#EFF3F5"
               />
             </svg>
-            <span v-subs-mask>{{ instSubs }}</span>
+            <span v-subs-mask>{{ blogger.inst_subs }}</span>
           </div>
         </div>
       </div>
@@ -68,15 +70,15 @@
 export default {
   props: {
     id: Number,
-    name: String,
-    img: String,
-    ytSubs: Number,
-    vkSubs: Number,
-    instSubs: Number,
   },
   computed: {
+    blogger() {
+      return this.$store.getters.getBloggers.find(
+        (blogger) => blogger.id === this.id
+      );
+    },
     getImageUrl() {
-      return require("../assets/images/bloggers/" + this.img);
+      return require("../assets/images/bloggers/" + this.blogger.img);
     },
   },
 };

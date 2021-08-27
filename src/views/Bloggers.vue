@@ -16,11 +16,6 @@
           v-for="blogger of bloggers"
           :key="blogger.id"
           :id="blogger.id"
-          :name="blogger.firstName + ' ' + blogger.lastName"
-          :img="blogger.img"
-          :yt-subs="blogger.yt_subs"
-          :vk-subs="blogger.vk_subs"
-          :inst-subs="blogger.inst_subs"
         />
       </div>
     </section>

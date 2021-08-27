@@ -24,7 +24,13 @@
     <section class="blogger__other">
       <div class="wrapper">
         <h1 class="blogger__other-title">Другие блогеры</h1>
-        <div class="blogger__other-list"></div>
+        <div class="blogger__other-list">
+          <app-blogger-min-card
+            v-for="blogger of otherBloggers"
+            :key="blogger.id"
+            :id="blogger.id"
+          />
+        </div>
       </div>
     </section>
   </main>
@@ -33,11 +39,13 @@
 <script>
 import AppBloggerBigCard from "@/components/AppBloggerBigCard.vue";
 import AppBloggerVideo from "@/components/AppBloggerVideo.vue";
+import AppBloggerMinCard from "@/components/AppBloggerMinCard.vue";
 
 export default {
   components: {
     AppBloggerBigCard,
     AppBloggerVideo,
+    AppBloggerMinCard,
   },
   computed: {
     blogger() {
@@ -46,7 +54,7 @@ export default {
       );
     },
     otherBloggers() {
-      return this.$store.getters.getOtherBloggers(this.$route.params.id);
+      return this.$store.getters.getBloggers;
     },
   },
 };
