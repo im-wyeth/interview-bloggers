@@ -128,16 +128,16 @@ export default {
 
     text-align: center;
 
+    transform: scale(0);
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
     -ms-transform: scale(0);
     -o-transform: scale(0);
-    transform: scale(0);
 
+    transition: linear 0.2s;
     -webkit-transition: linear 0.2s;
     -moz-transition: linear 0.2s;
     -o-transition: linear 0.2s;
-    transition: linear 0.2s;
 
     cursor: url("../assets/images/cursor2.png") 39.5 39.5, auto;
 
@@ -179,10 +179,10 @@ export default {
 
     border-radius: 5px;
 
-    -webkit-transition: linear 0.3s;
-    -moz-transition: linear 0.3s;
-    -o-transition: linear 0.3s;
-    transition: linear 0.3s;
+    transition: linear 0.2s;
+    -webkit-transition: linear 0.2s;
+    -moz-transition: linear 0.2s;
+    -o-transition: linear 0.2s;
 
     &:first-child {
       margin-top: 0;

@@ -140,10 +140,10 @@ export default {
     -webkit-align-items: flex-start;
     -ms-flex-align: flex-start;
 
+    transition: linear 0.3s;
     -webkit-transition: linear 0.3s;
     -moz-transition: linear 0.3s;
     -o-transition: linear 0.3s;
-    transition: linear 0.3s;
 
     width: 310px;
     height: 310px;
