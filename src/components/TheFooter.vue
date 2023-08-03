@@ -4,13 +4,14 @@
       <div class="footer__inner">
         <div class="footer__top">
           <img
+            class="footer__logo"
             src="@/assets/images/logo.png"
             alt="logo"
             width="200"
             height="200"
           />
           <nav class="footer__contacts">
-            <a href="#">Связаться с нами</a>
+            <span class="footer__contacts-title">Связаться с нами</span>
             <a href="#">reklama@wildjam.ru</a>
             <a href="#">ул. Сущевская, д. 27, стр. 2</a>
             <a href="#">+7 (499) 393-39-62</a>
@@ -53,68 +54,137 @@
   </footer>
 </template>
 
-<style lang="scss" scoped>
-.footer {
-  margin-top: 50px;
+<style lang="scss">
+  .footer {
+    margin-top: 50px;
 
-  height: 100%;
+    height: 100%;
 
-  background: -webkit-linear-gradient(
-    180deg,
-    #6e105e 0%,
-    rgba(51, 0, 42, 0.5) 100%
-  );
-  background: -moz-linear-gradient(
-    180deg,
-    #6e105e 0%,
-    rgba(51, 0, 42, 0.5) 100%
-  );
-  background: linear-gradient(180deg, #6e105e 0%, rgba(51, 0, 42, 0.5) 100%);
+    &__top {
+      display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      justify-content: space-between;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      align-items: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+    }
 
-  &__top {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    justify-content: space-between;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    align-items: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-  }
+    &__bottom {
+      position: relative;
+      bottom: 40px;
 
-  &__bottom {
-    position: relative;
-    bottom: 40px;
+      text-align: center;
 
-    text-align: center;
+      a {
+        margin-right: 30px;
 
-    a {
-      margin-right: 30px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
 
-      &:last-child {
-        margin-right: 0;
+    &__contacts {
+      &-title {
+        font-size: 17px;
+
+        margin-right: 3em;
+      }
+
+      a {
+        color: #fff;
+
+        font-weight: 600;
+        font-size: 20px;
+        text-decoration: none;
+
+        margin-right: 2em;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
 
-  &__contacts {
-    a {
-      color: #fff;
+  @media screen and (max-width: $adaptive-first-point) {
+    .footer {
+      &__logo {
+        max-width: 120px;
 
-      font-weight: 600;
-      font-size: 20px;
-      text-decoration: none;
+        max-height: 120px;
+      }
 
-      margin-right: 2em;
+      &__contacts {
+        a {
+          font-weight: 400;
+          font-size: 16px;
 
-      &:last-child {
-        margin-right: 0;
+          margin-right: 3.4em;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &__bottom {
+        bottom: 26px;
       }
     }
   }
-}
+
+  @media screen and (max-width: $adaptive-second-point) {
+    .footer {
+      padding-bottom: 30px;
+
+      &__logo {
+        display: none;
+      }
+
+      &__top {
+        display: flex;
+        justify-content: center;
+      }
+
+      &__bottom {
+        position: static;
+
+        margin-top: 30px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $adaptive-third-point) {
+    .footer {
+      &__inner {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      &__contacts {
+        display: flex;
+        flex-direction: column;
+
+        &-title {
+          font-size: 16px;
+          font-weight: 600;
+
+          margin-bottom: 20px;
+        }
+
+        a {
+          margin-top: 12px;
+
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 </style>

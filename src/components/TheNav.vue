@@ -14,22 +14,28 @@
 </template>
 
 <script>
-import AppNavElem from "@/components/AppNavElem.vue";
+  import AppNavElem from "@/components/AppNavElem.vue";
 
-export default {
-  components: {
-    AppNavElem,
-  },
-  computed: {
-    breadCrumbs() {
-      return this.$route.meta?.breadCrumbs;
+  export default {
+    components: {
+      AppNavElem,
     },
-  },
-};
+    computed: {
+      breadCrumbs() {
+        return this.$route.meta?.breadCrumbs;
+      },
+    },
+  };
 </script>
 
-<style lang="scss" scoped>
-.nav {
-  margin-top: 32px;
-}
+<style lang="scss">
+  .nav {
+    margin-top: 32px;
+  }
+
+  @media screen and (max-width: $adaptive-second-point) {
+    .nav {
+      padding-left: 20px;
+    }
+  }
 </style>

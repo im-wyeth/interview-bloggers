@@ -1,5 +1,5 @@
 <template>
-  <div class="blogger-video">
+  <div class="blogger-video" data-cursor-pointer>
     <img :src="getImageUrl" alt="preview" />
     <svg
       width="45"
@@ -18,50 +18,50 @@
 </template>
 
 <script>
-export default {
-  props: {
-    preview: String,
-  },
-  computed: {
-    getImageUrl() {
-      return require("../assets/images/videos-preview/" + this.preview);
+  export default {
+    props: {
+      preview: String,
     },
-  },
-};
+    computed: {
+      getImageUrl() {
+        return require("../assets/images/videos-preview/" + this.preview);
+      },
+    },
+  };
 </script>
 
-<style lang="scss" scoped>
-.blogger-video {
-  width: 420px;
-  height: 215px;
+<style lang="scss">
+  .blogger-video {
+    width: 420px;
+    height: 215px;
 
-  position: relative;
+    position: relative;
 
-  margin-top: 30px;
-  margin-right: 20px;
+    margin-top: 30px;
+    margin-right: 20px;
 
-  &:hover {
-    cursor: url("../assets/images/cursor2.png") 39.5 39.5, auto;
+    &:hover {
+      //
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    svg {
+      width: 45px;
+      height: 52px;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+    }
   }
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-
-  svg {
-    width: 45px;
-    height: 52px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-  }
-}
 </style>
